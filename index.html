@@ -208,19 +208,8 @@ h2.in .wd>span{transform:none}
 <div class="svc"><h3>D</h3><div><h4 class="sans" style="font-size:1.4rem;margin:0 0 8px">Consultoria</h4><p class="lead">Direção e posicionamento para decidir com segurança.</p></div><ul><li>Posicionamento</li><li>Pesquisa de público</li><li>Naming e mensagens</li><li>Auditoria de design</li></ul></div>
 <p style="margin-top:32px"><a class="btn" href="#contato">Começar um projeto</a></p></div></section>
 
-<section class="nums"><div class="wrap"><h2>Em números</h2><img class="mas rk" data-m="5" alt="Geco voando com um jetpack" width="618" height="325">
-<div class="stats"><div class="stat"><b>25</b><span>prêmios internacionais</span></div><div class="stat"><b>42</b><span>clientes em 11 países</span></div><div class="stat"><b>83</b><span>projetos entregues</span></div></div></div></section>
-
-<section><div class="wrap cols"><div><h2>Reconhecimento</h2><p class="lead">Alguns momentos em que o trabalho foi notado por júris independentes. Os nomes abaixo são fictícios, usados só como exemplo de layout.</p></div>
-<ul class="awards"><li><span>Prêmio Aurora<small>Identidade visual</small></span><span>×3</span></li><li><span>Bienal Norte<small>Tipografia</small></span><span>×2</span></li><li><span>Selo Meridiano<small>Design digital</small></span><span>×3</span></li><li><span>Site do Dia<small>Interação</small></span><span>×4</span></li></ul></div></section>
-
 <section class="proc"><div class="wrap"><div class="phead"><h2>Como trabalhamos</h2><div class="stage" aria-hidden="true"><img class="st" data-m="0" alt="" width="386" height="583"></div></div>
 <div class="steps"><div class="step"><h3>Escuta</h3><p class="lead">Entendemos objetivos, público e obstáculos antes de desenhar qualquer coisa.</p></div><div class="step"><h3>Estratégia</h3><p class="lead">Transformamos o que ouvimos em conceito, estrutura e direção criativa.</p></div><div class="step"><h3>Design e código</h3><p class="lead">Desenhamos, prototipamos e construímos com testes a cada etapa.</p></div><div class="step"><h3>Lançamento</h3><p class="lead">Acompanhamos depois da entrega para o trabalho continuar evoluindo.</p></div></div></div></section>
-
-<section><div class="wrap"><h2>O que dizem de nós</h2>
-<div class="quote" aria-live="polite"><blockquote id="q"></blockquote><cite id="c"></cite></div>
-<div class="ctrl"><button id="prev" aria-label="Depoimento anterior">Anterior</button><button id="next" aria-label="Próximo depoimento">Próximo</button></div></div></section>
-
 
 <section id="projeto"><div class="wrap"><h2>Projeto em destaque</h2>
 <dl class="meta"><div><dt>Projeto</dt><dd>Nome do projeto</dd></div><div><dt>Cliente</dt><dd>Nome do cliente</dd></div><div><dt>Ano</dt><dd>2026</dd></div><div><dt>Função</dt><dd>Identidade e site</dd></div></dl>
@@ -246,11 +235,6 @@ const M=["data:image/webp;base64,UklGRlIvAQBXRUJQVlA4WAoAAAAQAAAAgQEARgIAQUxQSKB
 document.querySelectorAll("img[data-m]").forEach(i=>{i.src=M[+i.dataset.m]});
 </script>
 <script>
-const T=[["O geco transformou ideias complicadas em algo claro e elegante.","Camila Torres, Ateliê Vela"],["Ganhamos uma identidade que finalmente parece com a gente.","Rafael Bergamo, Oficina Arco"],["Um processo calmo, com ideias fortes e execução precisa.","Marina Leal, Lúmen Tech"]];
-let i=0;const q=document.getElementById("q"),c=document.getElementById("c");
-function show(){q.textContent="“"+T[i][0]+"”";c.textContent=T[i][1];if(!matchMedia("(prefers-reduced-motion:reduce)").matches)q.parentElement.animate([{opacity:0,transform:"translateY(20px)"},{opacity:1,transform:"none"}],{duration:500,easing:"ease-out"})}
-document.getElementById("prev").onclick=()=>{i=(i+T.length-1)%T.length;show()};
-document.getElementById("next").onclick=()=>{i=(i+1)%T.length;show()};show();
 document.getElementById("f").onsubmit=e=>{e.preventDefault();document.getElementById("ok").style.display="block"};
 (()=>{
 if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
@@ -262,7 +246,7 @@ const m=D.querySelector(".manifesto p");
 m.innerHTML=m.textContent.trim().split(" ").map(w=>`<span class="w">${w}</span>`).join(" ");
 const ws=[...m.querySelectorAll(".w")];
 /* entrada dos blocos ao rolar */
-const rv=$(".manifesto .cols p,.svc,.stat,.awards li,.step,.quote,.plan,details,.form");
+const rv=$(".manifesto .cols p,.svc,.step,details,.form");
 rv.forEach(e=>e.classList.add("rv"));
 rv.forEach(e=>e.addEventListener("transitionend",()=>e.classList.add("done"),{once:true}));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;t.style.transitionDelay=([...t.parentElement.children].indexOf(t)%4*100)+"ms";t.classList.add("in");io.unobserve(t)}),{threshold:.15});
@@ -270,8 +254,6 @@ rv.forEach(e=>io.observe(e));
 /* contagem dos números */
 const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const b=e.target,n=+b.textContent,t0=performance.now();co.unobserve(b);
 const f=t=>{const p=Math.min((t-t0)/1500,1);b.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)};b.textContent=0;requestAnimationFrame(f)}),{threshold:.6});
-const dio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("go");dio.unobserve(e.target)}),{threshold:.6});
-$(".stat b").forEach(b=>{const t=b.textContent.trim();b.setAttribute("aria-label",t);b.innerHTML=[...t].map((d,i)=>`<span class="dg" aria-hidden="true"><span class="col" style="--n:${d};transition-delay:${i*160}ms">${[0,1,2,3,4,5,6,7,8,9].map(k=>`<i>${k}</i>`).join("")}</span></span>`).join("");dio.observe(b)});
 /* efeitos ligados ao scroll */
 const h1=D.querySelector(".hero h1"),svg=D.querySelector(".wm"),hd=D.querySelector("header");
 let ly=0,tk=false;
@@ -303,9 +285,8 @@ addEventListener("scroll",()=>requestAnimationFrame(img),{passive:true});img();
 const bub=D.createElement("div");bub.id="bub";bub.setAttribute("role","status");D.body.appendChild(bub);let bt;
 function say(el,t){const r=el.getBoundingClientRect();bub.textContent=t;bub.style.left=Math.max(130,Math.min(innerWidth-130,r.left+r.width/2))+"px";bub.style.top=Math.max(70,r.top+8)+"px";bub.classList.add("on");clearTimeout(bt);bt=setTimeout(()=>bub.classList.remove("on"),2600)}
 function setPose(i,k){i.dataset.m=k;i.src=M[k];i.width=S[k][0];i.height=S[k][1];i.classList.remove("pop");void i.offsetWidth;i.classList.add("pop")}
-const peek=D.querySelector(".peek"),man=D.querySelector(".manifesto"),rk=D.querySelector(".rk"),nums=D.querySelector(".nums"),ct=D.querySelector(".ct"),fm=D.getElementById("f");
+const peek=D.querySelector(".peek"),man=D.querySelector(".manifesto"),ct=D.querySelector(".ct"),fm=D.getElementById("f");
 peek.addEventListener("click",()=>say(peek,"Posso entrar? Só estou espiando."));
-rk.addEventListener("click",()=>say(rk,"Próxima parada: o seu projeto!"));
 ct.addEventListener("click",()=>say(ct,"Manda a mensagem que eu entrego!"));
 fm.addEventListener("focusin",()=>{if(!ct.classList.contains("launch")&&ct.dataset.m!=="6")setPose(ct,6)});
 fm.addEventListener("focusout",()=>{if(!ct.classList.contains("launch"))setPose(ct,3)});
@@ -314,8 +295,6 @@ const stg=D.querySelector(".st"),proc=D.querySelector(".proc"),SP=[0,4,3,5];let 
 function setStage(i){if(i===sc)return;sc=i;setPose(stg,SP[i])}
 $(".step").forEach((e,i)=>e.addEventListener("mouseenter",()=>setStage(i)));
 function mas(){const c=Math.max(0,Math.min(1,(innerHeight-man.getBoundingClientRect().top)/(innerHeight*.8)));peek.style.setProperty("--p",c);
-const nr=nums.getBoundingClientRect(),p=Math.max(0,Math.min(1,(innerHeight-nr.top)/(innerHeight+nr.height))),w=rk.offsetWidth;
-rk.style.transform=`translate(${-w+p*(nums.clientWidth+w)}px,${Math.sin(p*8)*28}px) rotate(${Math.sin(p*8)*3}deg)`;
 const pr=proc.getBoundingClientRect(),q=Math.max(0,Math.min(.999,(innerHeight*.9-pr.top)/(innerHeight*.9+pr.height*.2)));setStage(Math.floor(q*4))}
 addEventListener("scroll",()=>requestAnimationFrame(mas),{passive:true});mas();
 if(matchMedia("(pointer:fine)").matches){
