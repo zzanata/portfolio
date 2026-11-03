@@ -183,6 +183,107 @@ h2.in .wd>span{transform:none}
 .js .wl{animation:rise 1.1s .1s cubic-bezier(.2,.8,.2,1) backwards}
 .wm{height:clamp(160px,28vw,330px);flex:none}
 @media(max-width:700px){.wl{width:60%}.wm{height:150px;align-self:flex-end}}
+/* projeto: telas vivas do sistema */
+.mock{position:relative;overflow:hidden;border-radius:28px;font-family:"DM Sans",sans-serif;color:#0f172a}
+.mock *{box-sizing:border-box}.mock p{max-width:none}
+.js .mock{transition:opacity .8s ease}.js .mock:not(.live){opacity:0}
+.win{background:#f2f3f8;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(0,10,115,.35)}
+.wbar{display:flex;align-items:center;gap:6px;padding:12px 16px;background:#fff;border-bottom:1px solid #e6e6f1;font-size:.8rem;color:#64748b}
+.wbar i{width:10px;height:10px;border-radius:50%;background:#e6e6f1}.wbar i:first-child{background:#ff5f57}.wbar i:nth-child(2){background:#febc2e}.wbar i:nth-child(3){background:#28c840}.wbar span{margin-left:10px}
+.wbody{display:grid;grid-template-columns:150px 1fr}
+.wside{background:#00063f;color:#fff;padding:16px 10px;display:flex;flex-direction:column;gap:4px;font-size:.85rem}
+.wside b{display:block;padding:4px 10px 14px;font-size:1.1rem;color:#ffb500}
+.wside span{padding:8px 10px;border-radius:8px;color:#b2b6d5}.wside span.on{background:rgba(255,255,255,.12);color:#fff}
+.wmain{padding:18px;display:grid;gap:14px;min-width:0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mstat{position:relative;overflow:hidden;background:#fff;border:1px solid #e2e8f0;border-radius:16px;height:116px;padding:12px 14px;transition:translate .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,border-color .3s}
+.mstat:hover{translate:0 -4px;border-color:#d1d3e6;box-shadow:0 14px 30px -14px rgba(0,10,115,.3)}
+.mstat p{margin:0;font-size:.75rem;color:#64748b}
+.mstat b{display:block;margin-top:6px;font:600 1.3rem/1.2 "DM Sans",sans-serif;color:#000a73;font-variant-numeric:tabular-nums;white-space:nowrap}
+.mstat small{display:block;height:1.1em;font-size:.7rem;color:#94a3b8;margin-top:2px;white-space:nowrap}
+.mstat::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;transform-origin:left;background:linear-gradient(90deg,#000a73,#404796)}
+.mstat.s2::before{background:linear-gradient(90deg,#ffb500,#ffe199)}.mstat.s3::before{background:linear-gradient(90deg,#10b981,#34d399)}
+.mstat::after{content:"";position:absolute;top:0;bottom:0;left:-33%;width:33%;opacity:0;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent)}
+.mc{position:absolute;left:0;right:0;bottom:0;height:40px;opacity:.55;transition:opacity .3s}.mstat:hover .mc{opacity:1}
+.mc svg{display:block;width:100%;height:100%}
+.mc u{position:absolute;opacity:0;transition:opacity .2s,left .12s,top .12s;text-decoration:none}
+.mc .gd{top:0;bottom:0;width:1px;background:#cbd5e1}.mc .dt{width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:#fff;border:2px solid var(--c,#000a73)}
+.wrow{display:grid;grid-template-columns:1.2fr 1fr;gap:12px}
+.pn{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:14px;min-width:0}
+.pn h4{margin:0 0 8px;font:600 .9rem "DM Sans",sans-serif;color:#000a73}
+.ob{display:flex;align-items:center;gap:12px;padding:8px 0;border-top:1px solid #f1f5f9}.ob:nth-of-type(1){border:0}
+.ob svg{width:46px;height:46px;flex:none}.ob div{min-width:0;font-size:.82rem}.ob b{display:block;font-weight:600}.ob span{color:#94a3b8;font-size:.74rem}
+.bars{display:flex;align-items:flex-end;gap:10px;height:150px}
+.bars div{flex:1;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;font-size:.65rem;color:#94a3b8}
+.bars i{display:block;width:100%;height:calc(var(--h)*1% - 14px);border-radius:6px 6px 0 0;background:linear-gradient(#404796,#000a73);transform-origin:bottom;transition:filter .2s}
+.bars i:hover{filter:brightness(1.35)}.bars div:last-child i{background:linear-gradient(#ffe199,#ffb500)}
+.tw{overflow-x:auto}.mt{width:100%;border-collapse:collapse;font-size:.8rem;min-width:420px}
+.mt th{text-align:left;color:#94a3b8;font-weight:500;padding:6px 8px}.mt td{padding:8px;border-top:1px solid #f1f5f9;color:#334155}
+.tag{padding:2px 9px;border-radius:99px;font-size:.7rem;font-weight:600}.tag.ok{background:#ecfdf5;color:#059669}.tag.pd{background:#fff8e6;color:#8a5f00}
+.lg{background:linear-gradient(135deg,#00063f,#000a73 55%,#1f2784);color:#fff;aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:space-between;padding:28px}
+.lg>*{position:relative;z-index:1}.lg>.dots,.lg>.beam,.lg>.sun,.lg>.sp{position:absolute;z-index:0}
+.dots{inset:0;opacity:.7;background-image:radial-gradient(rgba(0,6,40,.55) 1.5px,transparent 1.9px);background-size:28px 28px;-webkit-mask-image:radial-gradient(ellipse at 30% 60%,#000 25%,transparent 80%);mask-image:radial-gradient(ellipse at 30% 60%,#000 25%,transparent 80%)}
+.beam{top:-10%;bottom:-10%;left:0;width:25%;opacity:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent)}
+.sun{right:-90px;top:-90px;width:300px;height:300px}
+.sun .rays{position:absolute;inset:0;border-radius:50%;opacity:.6;background:repeating-conic-gradient(from 0deg,rgba(255,181,0,.35) 0 3deg,transparent 3deg 24deg);-webkit-mask-image:radial-gradient(circle,transparent 22%,#000 24%,transparent 72%);mask-image:radial-gradient(circle,transparent 22%,#000 24%,transparent 72%)}
+.sun .core{position:absolute;inset:34%;border-radius:50%;background:#ffb500;opacity:.7;box-shadow:0 0 90px 30px rgba(255,181,0,.45)}
+.sp{bottom:-20px;left:var(--l);width:var(--s);height:var(--s);border-radius:50%;background:#ffb500;filter:blur(var(--b));opacity:0}
+.pill{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border-radius:99px;background:rgba(255,255,255,.1);font-size:.75rem;color:#ffe199;box-shadow:inset 0 0 0 1px rgba(255,255,255,.15)}
+.pill i{width:6px;height:6px;border-radius:50%;background:#ffb500}
+.sp3d{perspective:900px;width:100%;max-width:380px;margin:0 auto}
+.pv{position:relative;overflow:hidden;display:grid;grid-template-columns:repeat(6,1fr);gap:6px;padding:8px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:#00063f;transform:rotateX(52deg) rotateZ(-22deg);box-shadow:0 30px 50px rgba(0,0,0,.4)}
+.pv::after{content:"";position:absolute;top:0;bottom:0;left:0;width:33%;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:translateX(-120%) skewX(-12deg)}
+.tl{position:relative;aspect-ratio:4/3;border-radius:3px;border:1px solid rgba(255,255,255,.15);background:linear-gradient(135deg,rgba(115,120,178,.6),#1f2784);cursor:pointer;transition:translate 1.1s cubic-bezier(.22,1,.36,1),scale 1.1s cubic-bezier(.22,1,.36,1),box-shadow 1.1s,border-color 1.1s}
+.tl i{position:absolute;inset:0;border-radius:3px;opacity:0;pointer-events:none;background:radial-gradient(circle at 35% 30%,#fff 0%,#9fb2ff 38%,#4a63f0 100%);box-shadow:0 0 22px 6px rgba(120,150,255,.7),inset 0 0 10px rgba(255,255,255,.6);transition:opacity 1.4s ease-out}
+.tl:hover{translate:0 -3px;scale:1.12;border-color:rgba(200,215,255,.95);box-shadow:0 8px 22px rgba(120,150,255,.5);transition-duration:.18s;z-index:2;animation-play-state:paused}
+.tl:hover>i{opacity:1;transition-duration:.12s}.tl:hover+.tl>i,.tl:has(+.tl:hover)>i{opacity:.5;transition-duration:.25s}
+.lg h5{margin:0;font:600 clamp(1.6rem,3vw,2.2rem)/1.1 "DM Sans",sans-serif;letter-spacing:-.01em}.lg h5 em{font-style:normal;color:#ffb500}
+.lg p{margin:8px 0 0;font-size:.85rem;color:rgba(255,255,255,.7);max-width:34ch}
+.od{background:#fff;border:1px solid #e2e8f0;padding:28px;display:flex;flex-direction:column;gap:6px}
+.od .tg{align-self:flex-start;background:#fff8e6;color:#8a5f00;border-radius:99px;padding:3px 12px;font-size:.75rem;font-weight:600}
+.od h5{margin:6px 0 0;font:600 1.5rem/1.15 "DM Sans",sans-serif;color:#000a73}.od .sub{margin:0;color:#64748b;font-size:.85rem}
+.od .big{width:min(52%,170px);margin:14px auto}.od .big svg{width:100%;display:block}
+.ck{list-style:none;margin:6px 0 0;padding:0}
+.ck li{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid #eef0f6;font-size:.88rem;transition:translate .25s}.ck li:hover{translate:4px 0}
+.ck i{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:.75rem;background:#e6e6f1;color:#fff}.ck .done i{background:#059669}
+.pb{margin-top:auto;padding-top:16px;font-size:.78rem;color:#64748b}
+.pb div{height:8px;border-radius:99px;background:#e6e6f1;margin-top:6px;overflow:hidden}
+.pb u{display:block;height:100%;width:var(--w);border-radius:99px;background:linear-gradient(90deg,#ffb500,#ffe199);transform-origin:left}
+.live .mstat{animation:m-rise .7s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i)*70ms)}
+.live .mstat::before{animation:m-fill 1s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i)*70ms + 150ms)}
+.live .mstat::after{animation:m-sheen 1.1s ease-out both;animation-delay:calc(var(--i)*70ms + 350ms)}
+.live .mc{animation:m-wipe 1.1s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i,0)*70ms + 300ms)}
+.live .pn{animation:m-rise .7s cubic-bezier(.22,1,.36,1) .35s both}
+.live .ring{animation:m-ring 1.2s cubic-bezier(.22,1,.36,1) .5s both}
+.live .bars i{animation:m-grow .9s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i)*60ms + 500ms)}
+.live .mt tbody tr{animation:m-row .4s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i)*60ms + 800ms)}
+.live .dots{animation:m-pan 24s linear infinite}.live .beam{animation:m-beam 11s ease-in-out infinite}
+.live .sun .rays{animation:m-spin 48s linear infinite}.live .sun .core{animation:m-glow 5s ease-in-out infinite}
+.live .sp{animation:m-float var(--d) linear infinite;animation-delay:var(--dl)}
+.live .pill i{animation:m-pulse 1.1s ease-in-out infinite}
+.live .tl{animation:m-twinkle 4.2s ease-in-out infinite;animation-delay:var(--dl)}
+.live .pv::after{animation:m-sweep 7s ease-in-out infinite}
+.live .ck li{animation:m-row .5s cubic-bezier(.22,1,.36,1) both;animation-delay:calc(var(--i)*110ms + 700ms)}
+.live .ck .done i{animation:m-pop .5s ease-out both;animation-delay:calc(var(--i)*110ms + 900ms)}
+.live .pb u{animation:m-fill 1.2s cubic-bezier(.22,1,.36,1) 1s both}
+@keyframes m-rise{from{opacity:0;transform:translateY(18px) scale(.985);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes m-fill{from{transform:scaleX(0)}}
+@keyframes m-sheen{from{transform:translateX(0) skewX(-12deg);opacity:0}20%{opacity:1}to{transform:translateX(520%) skewX(-12deg);opacity:0}}
+@keyframes m-wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}
+@keyframes m-ring{from{stroke-dasharray:0 264}}
+@keyframes m-grow{from{transform:scaleY(0)}}
+@keyframes m-row{from{opacity:0;transform:translateX(-8px)}}
+@keyframes m-pan{to{background-position:56px 56px}}
+@keyframes m-beam{0%,20%{transform:translateX(-130%) skewX(-18deg);opacity:0}35%,75%{opacity:1}90%,100%{transform:translateX(330%) skewX(-18deg);opacity:0}}
+@keyframes m-spin{to{transform:rotate(360deg)}}
+@keyframes m-glow{0%,100%{transform:scale(1);opacity:.55}50%{transform:scale(1.12);opacity:.9}}
+@keyframes m-float{0%{transform:translate3d(0,0,0) scale(.6);opacity:0}12%{opacity:.9}85%{opacity:.7}100%{transform:translate3d(0,-760px,0) scale(1.1);opacity:0}}
+@keyframes m-pulse{0%,100%{transform:scale(.94);opacity:.65}50%{transform:scale(1.04);opacity:1}}
+@keyframes m-twinkle{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes m-sweep{0%,15%{transform:translateX(-120%) skewX(-12deg)}55%,100%{transform:translateX(260%) skewX(-12deg)}}
+@keyframes m-pop{from{scale:0}60%{scale:1.25}}
+@media(prefers-reduced-motion:reduce){.mock *,.mock *::before,.mock *::after{animation:none!important}}
+@media(max-width:760px){.wbody{grid-template-columns:1fr}.wside{display:none}.stats{grid-template-columns:1fr 1fr}.wrow{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -212,10 +313,19 @@ h2.in .wd>span{transform:none}
 <div class="steps"><div class="step"><h3>Escuta</h3><p class="lead">Entendemos objetivos, público e obstáculos antes de desenhar qualquer coisa.</p></div><div class="step"><h3>Estratégia</h3><p class="lead">Transformamos o que ouvimos em conceito, estrutura e direção criativa.</p></div><div class="step"><h3>Design e código</h3><p class="lead">Desenhamos, prototipamos e construímos com testes a cada etapa.</p></div><div class="step"><h3>Lançamento</h3><p class="lead">Acompanhamos depois da entrega para o trabalho continuar evoluindo.</p></div></div></div></section>
 
 <section id="projeto"><div class="wrap"><h2>Projeto em destaque</h2>
-<dl class="meta"><div><dt>Projeto</dt><dd>Nome do projeto</dd></div><div><dt>Cliente</dt><dd>Nome do cliente</dd></div><div><dt>Ano</dt><dd>2026</dd></div><div><dt>Função</dt><dd>Identidade e site</dd></div></dl>
-<figure class="shot"><div class="ph a"></div></figure>
-<div class="cols" style="margin-top:48px"><p class="lead">Descreva aqui o contexto do projeto: quem era o cliente e qual problema precisava ser resolvido.</p><p class="lead">Conte como foi a solução e o que mudou depois da entrega. Dois parágrafos curtos bastam.</p></div>
-<div class="duo"><figure class="shot tall"><div class="ph b"></div></figure><figure class="shot tall"><div class="ph c"></div></figure></div></div>
+<dl class="meta"><div><dt>Projeto</dt><dd>Gestão de Obras</dd></div><div><dt>Cliente</dt><dd>GTG Energia</dd></div><div><dt>Ano</dt><dd>2026</dd></div><div><dt>Função</dt><dd>Design e desenvolvimento</dd></div></dl>
+<div class="mock win" role="img" aria-label="Painel fictício do sistema de gestão de obras"><div class="wbar"><i></i><i></i><i></i><span>Gestão de Obras · Painel</span></div>
+<div class="wbody"><aside class="wside"><b>GTG</b><span class="on">Painel</span><span>Obras</span><span>Notas fiscais</span><span>Financeiro</span><span>Estoque</span></aside>
+<div class="wmain"><div class="stats"><div class="mstat s1" style="--i:0" data-s="8,9,9,10,11,12" data-c="#000a73"><p>Obras ativas</p><b data-count="12" data-kind="int">12</b><small>3 em atraso</small></div><div class="mstat s2" style="--i:1" data-s="18,22,25,21,27,35" data-c="#e6a200"><p>Notas fiscais</p><b data-count="148" data-kind="int">148</b><small>no semestre</small></div><div class="mstat s3" style="--i:2" data-s="52000,64000,71000,83000,98000,114300" data-c="#10b981"><p>Faturamento</p><b data-count="482300" data-kind="brl">R$ 482.300</b><small>no semestre</small></div><div class="mstat s1" style="--i:3" data-s="1010,1060,1105,1150,1200,1240" data-c="#000a73"><p>Itens em estoque</p><b data-count="1240" data-kind="int">1.240</b><small>8 abaixo do mínimo</small></div></div>
+<div class="wrow"><div class="pn"><h4>Obras em andamento</h4><div class="ob"><svg viewBox="0 0 100 100"  aria-hidden="true"><circle cx="50" cy="50" r="42" fill="none" stroke="#e6e6f1" stroke-width="10"/><circle class="ring" cx="50" cy="50" r="42" fill="none" stroke="#000a73" stroke-width="10" stroke-linecap="round" stroke-dasharray="205.8 264" transform="rotate(-90 50 50)"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="600" fill="#000a73" data-count="78" data-kind="pct">78%</text></svg><div><b>Usina Boa Vista</b><span>Goiás · em andamento</span></div></div><div class="ob"><svg viewBox="0 0 100 100"  aria-hidden="true"><circle cx="50" cy="50" r="42" fill="none" stroke="#e6e6f1" stroke-width="10"/><circle class="ring" cx="50" cy="50" r="42" fill="none" stroke="#000a73" stroke-width="10" stroke-linecap="round" stroke-dasharray="118.8 264" transform="rotate(-90 50 50)"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="600" fill="#000a73" data-count="45" data-kind="pct">45%</text></svg><div><b>Residencial Aurora</b><span>Cobertura · em andamento</span></div></div><div class="ob"><svg viewBox="0 0 100 100"  aria-hidden="true"><circle cx="50" cy="50" r="42" fill="none" stroke="#e6e6f1" stroke-width="10"/><circle class="ring" cx="50" cy="50" r="42" fill="none" stroke="#ffb500" stroke-width="10" stroke-linecap="round" stroke-dasharray="31.7 264" transform="rotate(-90 50 50)"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="600" fill="#000a73" data-count="12" data-kind="pct">12%</text></svg><div><b>Galpão Industrial Norte</b><span>Instalação · início</span></div></div></div><div class="pn"><h4>Faturamento por mês</h4><div class="bars"><div><i style="--h:42;--i:0" title="Mai"></i>Mai</div><div><i style="--h:54;--i:1" title="Jun"></i>Jun</div><div><i style="--h:60;--i:2" title="Jul"></i>Jul</div><div><i style="--h:70;--i:3" title="Ago"></i>Ago</div><div><i style="--h:84;--i:4" title="Set"></i>Set</div><div><i style="--h:98;--i:5" title="Out"></i>Out</div></div></div></div>
+<div class="pn tw"><table class="mt"><thead><tr><th>Nota</th><th>Fornecedor</th><th>Valor</th><th>Situação</th></tr></thead><tbody><tr style="--i:0"><td>NF 000412</td><td>SolarTech Painéis</td><td>R$ 38.900</td><td><span class="tag ok">Paga</span></td></tr><tr style="--i:1"><td>NF 000413</td><td>Cabos &amp; Conexões</td><td>R$ 4.720</td><td><span class="tag pd">Pendente</span></td></tr><tr style="--i:2"><td>NF 000414</td><td>Estruturas Sul</td><td>R$ 12.350</td><td><span class="tag ok">Paga</span></td></tr><tr style="--i:3"><td>NF 000415</td><td>Inversores BR</td><td>R$ 27.800</td><td><span class="tag pd">Pendente</span></td></tr></tbody></table></div></div></div></div>
+<div class="cols" style="margin-top:48px"><p class="lead">Sistema web para acompanhar obras de energia solar: andamento de cada usina, notas fiscais, financeiro e estoque, tudo em um só lugar, com cada tela pensada para a rotina de quem está em campo e de quem está no escritório.</p><p class="lead">Os dados mostrados aqui são fictícios. As animações do sistema foram recriadas nesta página: entrada em cascata, números que sobem, anéis de progresso, gráficos que respondem ao mouse e o painel solar da tela de login.</p></div>
+<p style="margin-top:28px"><a class="btn" href="https://estoque-omega-khaki.vercel.app/" target="_blank" rel="noopener">Ver o sistema online</a></p>
+<div class="duo"><div class="mock lg" role="img" aria-label="Tela de login com painel solar animado"><div class="dots"></div><div class="beam"></div><div class="sun"><div class="rays"></div><div class="core"></div></div><span class="sp" style="--l:6%;--s:9px;--b:0px;--d:9s;--dl:0s"></span><span class="sp" style="--l:15%;--s:14px;--b:3px;--d:12s;--dl:3.2s"></span><span class="sp" style="--l:26%;--s:6px;--b:0px;--d:10s;--dl:5.5s"></span><span class="sp" style="--l:38%;--s:11px;--b:1px;--d:8s;--dl:1.2s"></span><span class="sp" style="--l:50%;--s:16px;--b:4px;--d:13s;--dl:4.4s"></span><span class="sp" style="--l:61%;--s:8px;--b:0px;--d:9s;--dl:2.4s"></span><span class="sp" style="--l:72%;--s:12px;--b:2px;--d:11s;--dl:6.8s"></span><span class="sp" style="--l:83%;--s:7px;--b:0px;--d:10s;--dl:0.8s"></span><span class="sp" style="--l:92%;--s:15px;--b:3px;--d:12s;--dl:3.8s"></span><span class="sp" style="--l:44%;--s:6px;--b:0px;--d:9s;--dl:7.5s"></span>
+<span class="pill"><i></i>Energia solar</span><div class="sp3d"><div class="pv"><span class="tl" style="--dl:0.0s"><i></i></span><span class="tl" style="--dl:0.733s"><i></i></span><span class="tl" style="--dl:1.466s"><i></i></span><span class="tl" style="--dl:2.199s"><i></i></span><span class="tl" style="--dl:2.932s"><i></i></span><span class="tl" style="--dl:3.665s"><i></i></span><span class="tl" style="--dl:0.198s"><i></i></span><span class="tl" style="--dl:0.931s"><i></i></span><span class="tl" style="--dl:1.664s"><i></i></span><span class="tl" style="--dl:2.397s"><i></i></span><span class="tl" style="--dl:3.13s"><i></i></span><span class="tl" style="--dl:3.863s"><i></i></span><span class="tl" style="--dl:0.396s"><i></i></span><span class="tl" style="--dl:1.129s"><i></i></span><span class="tl" style="--dl:1.862s"><i></i></span><span class="tl" style="--dl:2.595s"><i></i></span><span class="tl" style="--dl:3.328s"><i></i></span><span class="tl" style="--dl:4.061s"><i></i></span><span class="tl" style="--dl:0.594s"><i></i></span><span class="tl" style="--dl:1.327s"><i></i></span><span class="tl" style="--dl:2.06s"><i></i></span><span class="tl" style="--dl:2.793s"><i></i></span><span class="tl" style="--dl:3.526s"><i></i></span><span class="tl" style="--dl:0.059s"><i></i></span><span class="tl" style="--dl:0.792s"><i></i></span><span class="tl" style="--dl:1.525s"><i></i></span><span class="tl" style="--dl:2.258s"><i></i></span><span class="tl" style="--dl:2.991s"><i></i></span><span class="tl" style="--dl:3.724s"><i></i></span><span class="tl" style="--dl:0.257s"><i></i></span></div></div><div><h5>Gestão de obras <em>sem complicação.</em></h5><p>Acompanhe o andamento das usinas, as notas fiscais, o financeiro e o estoque em um só lugar.</p></div></div>
+<div class="mock od" role="img" aria-label="Detalhe fictício de uma obra"><span class="tg">Em andamento</span><h5>Usina Solar Boa Vista</h5><p class="sub">Instalação de 480 kWp · cliente fictício</p><div class="big"><svg viewBox="0 0 100 100"  aria-hidden="true"><circle cx="50" cy="50" r="42" fill="none" stroke="#e6e6f1" stroke-width="10"/><circle class="ring" cx="50" cy="50" r="42" fill="none" stroke="#000a73" stroke-width="10" stroke-linecap="round" stroke-dasharray="205.8 264" transform="rotate(-90 50 50)"/><text x="50" y="50" text-anchor="middle" dominant-baseline="central" font-size="22" font-weight="600" fill="#000a73" data-count="78" data-kind="pct">78%</text></svg></div>
+<ul class="ck"><li class="done" style="--i:0"><i>✓</i>Projeto aprovado</li><li class="done" style="--i:1"><i>✓</i>Material entregue</li><li class="done" style="--i:2"><i>✓</i>Estruturas instaladas</li><li style="--i:3"><i></i>Módulos fotovoltaicos</li><li style="--i:4"><i></i>Vistoria da concessionária</li></ul>
+<div class="pb"><span>Material usado · 64%</span><div><u style="--w:64%"></u></div></div></div></div></div>
 <div class="stack" id="stack"><div class="sticky"><div class="layer ph a"></div><div class="layer ph b"></div><div class="layer ph c"></div><p class="cap" id="cap">Conceito</p></div></div></section>
 
 <section id="duvidas"><div class="wrap"><h2>Perguntas frequentes</h2>
@@ -306,6 +416,29 @@ cur.classList.toggle("big",!!e.target.closest("a,button,summary,select,input,.ma
 (function loop(){cx+=(mx-cx)*.18;cy+=(my-cy)*.18;cur.style.transform=`translate(${cx}px,${cy}px)`;requestAnimationFrame(loop)})();
 $(".btn").forEach(b=>{b.addEventListener("mousemove",e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.3}px,${(e.clientY-r.top-r.height/2)*.4}px)`});b.addEventListener("mouseleave",()=>b.style.transform="")});
 }
+})();
+</script>
+<script>
+(()=>{
+const reduce=matchMedia("(prefers-reduced-motion:reduce)").matches,D=document;
+const NF={int:n=>Math.round(n).toLocaleString("pt-BR"),brl:n=>"R$ "+Math.round(n).toLocaleString("pt-BR"),pct:n=>Math.round(n)+"%"};
+function tw(el,to,ms){cancelAnimationFrame(el._r);const k=el.dataset.kind||"int",from=el._v||0,t0=performance.now();
+ if(reduce){el._v=to;el.textContent=NF[k](to);return}
+ const f=t=>{const p=Math.min(1,(t-t0)/ms),e=p===1?1:1-Math.pow(2,-10*p),v=from+(to-from)*e;el._v=v;el.textContent=NF[k](v);if(p<1)el._r=requestAnimationFrame(f)};el._r=requestAnimationFrame(f)}
+const M=["Mai","Jun","Jul","Ago","Set","Out"];
+D.querySelectorAll(".mstat[data-s]").forEach((c,k)=>{
+ const v=c.dataset.s.split(",").map(Number),n=v.length,mn=Math.min(0,...v),mx=Math.max(...v),sp=mx-mn||1,col=c.dataset.c;
+ const px=i=>4+i/(n-1)*92,py=x=>12+(1-(x-mn)/sp)*76;
+ const d=v.map((x,i)=>(i?"L":"M")+px(i).toFixed(1)+" "+py(x).toFixed(1)).join(" ");
+ c.insertAdjacentHTML("beforeend",`<div class="mc" style="--c:${col}"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="mg${k}" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".28"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs><path d="${d} L${px(n-1)} 100 L${px(0)} 100Z" fill="url(#mg${k})"/><path d="${d}" fill="none" stroke="${col}" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/></svg><u class="gd"></u><u class="dt"></u></div>`);
+ const b=c.querySelector("b"),sm=c.querySelector("small"),hint=sm.textContent,total=+b.dataset.count,gd=c.querySelector(".gd"),dt=c.querySelector(".dt");
+ c.addEventListener("mousemove",e=>{const r=c.getBoundingClientRect(),pc=(e.clientX-r.left)/r.width*100,i=Math.max(0,Math.min(n-1,Math.round((pc-4)/92*(n-1))));
+  tw(b,v[i],380);sm.textContent=M[i+(6-n)]||M[i];gd.style.left=px(i)+"%";dt.style.left=px(i)+"%";dt.style.top=py(v[i])+"%";gd.style.opacity=dt.style.opacity=1});
+ c.addEventListener("mouseleave",()=>{tw(b,total,380);sm.textContent=hint;gd.style.opacity=dt.style.opacity=0});
+});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const m=e.target;m.classList.add("live");io.unobserve(m);
+ m.querySelectorAll("[data-count]").forEach(el=>{el._v=0;tw(el,+el.dataset.count,1000)})}),{threshold:.2});
+D.querySelectorAll(".mock").forEach(m=>io.observe(m));
 })();
 </script>
 </body>
